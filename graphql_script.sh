@@ -8,6 +8,7 @@ data=$(curl -H "Authorization: token $GITHUB_TOKEN" -s -d @- https://api.github.
     }
   }
 " }
-GQL)
+GQL
+)
 
 echo $data | jq -r .data.viewer.login
