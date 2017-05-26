@@ -4,6 +4,7 @@ build:
     - script:
       name: install deps
       code: |
+        apt-get -y update
         apt-get -y install jq
     - script:
       name: exec sh
