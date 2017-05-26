@@ -2,6 +2,10 @@ box: debian
 build:
   steps:
     - script:
-      name: echo
+      name: install deps
       code: |
-        jq --help
+        apt-get -y install jq
+    -script:
+      name: exec sh
+      code: |
+        bash graphql_script.sh
