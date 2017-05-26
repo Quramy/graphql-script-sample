@@ -5,7 +5,7 @@ build:
       name: install deps
       code: |
         apt-get -y install jq
-    -script:
+    - script:
       name: exec sh
       code: |
         bash graphql_script.sh
