@@ -7,7 +7,7 @@ function getPR() {
 { "query": "
   query {
     repository(owner:\"Quramy\", name: \"graphql-script-sample\") {
-      ref(qualifiedName: \"$BRANCH_NAME\") {
+      ref(qualifiedName: \"$WERCKER_GIT_BRANCH\") {
         name,
         associatedPullRequests(first: 1) {
           totalCount,
