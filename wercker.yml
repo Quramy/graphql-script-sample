@@ -10,3 +10,4 @@ build:
       name: exec sh
       code: |
         bash graphql_script.sh
+        bash get_pr.sh
