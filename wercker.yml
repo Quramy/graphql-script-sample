@@ -5,7 +5,7 @@ build:
       name: install deps
       code: |
         apt-get -y update
-        apt-get -y install curl jq git
+        apt-get -y install curl jq
     - script:
       name: exec sh
       code: |

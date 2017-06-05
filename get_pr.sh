@@ -1,12 +1,10 @@
 #!/bin/bash
 
 function getPR() {
-  BRANCH_NAME=$(git branch | grep -E "^\*" | cut -f 2 -d " ")
-  echo "branch: $BRANCH_NAME" >&2
   data=$(curl -H "Authorization: token $GITHUB_TOKEN" -s -d @- https://api.github.com/graphql << GQL
 { "query": "
   query {
-    repository(owner:\"Quramy\", name: \"graphql-script-sample\") {
+    repository(owner:\"$WERCKER_GIT_OWNER\", name: \"$WERCKER_GIT_REPOSITORY\") {
       ref(qualifiedName: \"$WERCKER_GIT_BRANCH\") {
         name,
         associatedPullRequests(first: 1) {
